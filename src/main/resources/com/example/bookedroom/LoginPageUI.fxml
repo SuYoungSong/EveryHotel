@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.LoginPageController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
+         <children>
+            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveMainPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
+            <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
+               <children>
+                  <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Text layoutX="103.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="로그인">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="nomalMemberRadioButton" layoutX="95.0" layoutY="188.0" mnemonicParsing="false" selected="true" text="개인 회원">
+         <toggleGroup>
+            <ToggleGroup fx:id="memberType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="BusinessMemberRadioButton" layoutX="183.0" layoutY="188.0" mnemonicParsing="false" text="기업 회원" toggleGroup="$memberType" />
+      <Text layoutX="45.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="loginIdField" layoutX="107.0" layoutY="235.0" prefHeight="40.0" prefWidth="215.0" />
+      <PasswordField fx:id="loginPasswordField" layoutX="107.0" layoutY="299.0" prefHeight="40.0" prefWidth="215.0" />
+      <Pane layoutX="113.0" layoutY="429.0" onMouseClicked="#moveFineAccountPage" prefHeight="30.0" prefWidth="125.0">
+         <children>
+            <Text layoutY="20.0" onMouseClicked="#moveFineAccountPage" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디 / 비밀번호 찾기" underline="true" />
+         </children>
+      </Pane>
+      <Button layoutX="38.0" layoutY="379.0" mnemonicParsing="false" onMouseClicked="#onClickLoginButton" prefHeight="50.0" prefWidth="275.0" text="로그인">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

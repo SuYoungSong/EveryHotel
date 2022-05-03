@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.FindAccountPageController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
+         <children>
+            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveLoginPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
+            <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
+               <children>
+                  <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Text layoutX="99.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="계정 찾기">
+         <font>
+            <Font size="35.0" />
+         </font></Text>
+      <TextField fx:id="nameField" layoutX="106.0" layoutY="234.0" prefHeight="40.0" prefWidth="215.0" />
+      <Text layoutX="46.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="nameText" layoutX="60.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="accountPasswordRadioButton" layoutX="182.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#changeForm" text="비밀번호">
+         <toggleGroup>
+            <ToggleGroup fx:id="account" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="accountIdRadioButton" layoutX="94.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#changeForm" selected="true" text="아이디" toggleGroup="$account" />
+      <Text fx:id="idText" layoutX="45.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="37.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#onClickFindAccountButton" prefHeight="50.0" prefWidth="275.0" text="찾 기">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <TextField fx:id="phoneFieldFirst" layoutX="105.0" layoutY="297.0" prefHeight="40.0" prefWidth="45.0" />
+      <TextField fx:id="idField" layoutX="106.0" layoutY="355.0" prefHeight="40.0" prefWidth="215.0" visible="false" />
+      <RadioButton fx:id="nomalMemberRadioButton" layoutX="94.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#changeForm" selected="true" text="일반회원">
+         <toggleGroup>
+            <ToggleGroup fx:id="memberType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="businessMemberRadioButton" layoutX="182.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#changeForm" text="기업회원" toggleGroup="$memberType" />
+      <TextField fx:id="phoneFieldSecond" layoutX="182.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
+      <TextField fx:id="phoneFieldThird" layoutX="266.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
+      <Text layoutX="158.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="246.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Pane fx:id="valuePane" layoutX="75.0" layoutY="211.0" prefHeight="175.0" prefWidth="200.0" style="-fx-background-color: gray;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="53.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="찾기 결과">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="resultText" fill="#ffffff66" layoutX="20.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="160.7724609375">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Button layoutX="53.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#onClickSearchCloseButton" prefHeight="23.0" prefWidth="95.0" text="닫 기" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

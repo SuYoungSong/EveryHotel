@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.BookingPageController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
+         <children>
+            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveMemberMainPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
+            <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
+               <children>
+                  <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Text layoutX="26.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="투숙일">
+         <font>
+            <Font size="17.0" />
+         </font></Text>
+      <Text layoutX="26.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="퇴실일">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="26.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="인원수">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="startDate" layoutX="84.0" layoutY="69.0" />
+      <DatePicker fx:id="endDate" layoutX="84.0" layoutY="103.0" />
+      <TextField fx:id="peopleNum" layoutX="84.0" layoutY="137.0" prefHeight="23.0" prefWidth="163.0" />
+      <Button layoutX="263.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#onClickBookingSearch" prefHeight="91.0" prefWidth="66.0" text="Search" />
+      <ScrollPane fx:id="bookingScrollPane" hbarPolicy="NEVER" layoutY="176.0" prefHeight="437.0" prefWidth="350.0" />
+   </children>
+</AnchorPane>

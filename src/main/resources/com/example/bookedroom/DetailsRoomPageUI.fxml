@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.DetailsRoomPageController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
+         <children>
+            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveBookingPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
+            <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
+               <children>
+                  <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="imagePane" layoutY="50.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: lightgray;">
+         <children>
+            <Pane fx:id="leftImageChange" layoutX="23.0" layoutY="85.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
+            <Pane fx:id="rightImageChange" layoutX="299.0" layoutY="85.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
+         </children>
+      </Pane>
+      <Button layoutY="550.0" mnemonicParsing="false" onMouseClicked="#onClickBooking" prefHeight="50.0" prefWidth="350.0" text="예약하기" />
+      <Text layoutX="12.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자번호 :" />
+      <Text layoutX="35.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="업체명 :" />
+      <Text layoutX="47.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="문의 :" />
+      <Text fx:id="roomName" layoutX="12.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="roomAddress" layoutX="15.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="roomPrice" layoutX="262.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null원">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="companyName" layoutX="87.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
+      <Text fx:id="companyPhone" layoutX="87.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
+      <Text fx:id="companyId" layoutX="87.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
+   </children>
+</AnchorPane>
