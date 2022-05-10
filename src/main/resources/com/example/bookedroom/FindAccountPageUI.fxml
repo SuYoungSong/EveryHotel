@@ -24,6 +24,10 @@
             <Font size="35.0" />
          </font></Text>
       <TextField fx:id="nameField" layoutX="106.0" layoutY="234.0" prefHeight="40.0" prefWidth="215.0" />
+      <TextField fx:id="phoneFieldFirst" layoutX="105.0" layoutY="297.0" prefHeight="40.0" prefWidth="45.0" />
+      <TextField fx:id="phoneFieldSecond" layoutX="182.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
+      <TextField fx:id="phoneFieldThird" layoutX="266.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
+      <TextField fx:id="idField" layoutX="106.0" layoutY="355.0" prefHeight="40.0" prefWidth="215.0" visible="false" />
       <Text layoutX="46.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
          <font>
             <Font size="16.0" />
@@ -50,16 +54,12 @@
             <Font size="26.0" />
          </font>
       </Button>
-      <TextField fx:id="phoneFieldFirst" layoutX="105.0" layoutY="297.0" prefHeight="40.0" prefWidth="45.0" />
-      <TextField fx:id="idField" layoutX="106.0" layoutY="355.0" prefHeight="40.0" prefWidth="215.0" visible="false" />
       <RadioButton fx:id="nomalMemberRadioButton" layoutX="94.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#changeForm" selected="true" text="일반회원">
          <toggleGroup>
             <ToggleGroup fx:id="memberType" />
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="businessMemberRadioButton" layoutX="182.0" layoutY="158.0" mnemonicParsing="false" onMouseClicked="#changeForm" text="기업회원" toggleGroup="$memberType" />
-      <TextField fx:id="phoneFieldSecond" layoutX="182.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
-      <TextField fx:id="phoneFieldThird" layoutX="266.0" layoutY="297.0" prefHeight="40.0" prefWidth="55.0" />
       <Text layoutX="158.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
          <font>
             <Font size="16.0" />

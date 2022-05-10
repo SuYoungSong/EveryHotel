@@ -20,7 +20,8 @@ public class BusinessMainPageController extends Controller{
 
     @FXML
     void onClickLogoutButton(MouseEvent event) throws IOException {
-        movePage(event, "MemberSearchBookinPageUI.fxml");
+        LoginData ld = new LoginData("","");
+        movePage(event, "MainPageUI.fxml");
     }
 
 }

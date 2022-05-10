@@ -32,13 +32,14 @@ public class DataBaseConnection {
 
     public int sendQuryPost(String SQL){
         try {
+            System.out.println(SQL);
             statment.execute(SQL);
         } catch(SQLException e) {
-            return -1;  // 잘못된 sql문 입력
+            return -1;              // 잘못된 sql문 입력
         } catch (Exception e) {
-            e.printStackTrace();  // 나머지 에러
+            e.printStackTrace();    // 나머지 에러
         }
-        return 0;   // 정상 처리
+        return 0;                   // 정상 처리
     }
 }
 

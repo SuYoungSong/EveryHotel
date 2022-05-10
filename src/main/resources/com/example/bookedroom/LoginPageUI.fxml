@@ -52,5 +52,20 @@
             <Font size="26.0" />
          </font>
       </Button>
+      <Pane fx:id="loginModal" layoutX="58.0" layoutY="222.0" prefHeight="130.0" prefWidth="250.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Button layoutX="75.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#onClickCloseModal" prefWidth="100.0" text="닫 기" />
+            <Text layoutX="105.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="contentText" fill="#da1111" layoutX="28.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="내용">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

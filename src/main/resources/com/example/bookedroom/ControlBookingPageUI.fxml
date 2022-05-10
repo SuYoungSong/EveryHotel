@@ -25,5 +25,63 @@
          </font>
       </Button>
       <ScrollPane layoutY="113.0" prefHeight="487.0" prefWidth="350.0" vbarPolicy="NEVER" />
+      <Pane fx:id="addRoomModal" layoutX="26.0" layoutY="107.0" prefHeight="425.0" prefWidth="300.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="41.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="41.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="정원:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="41.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="분류:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="41.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="호실:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="24.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이미지:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button layoutX="29.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onClickAddRoomDB" prefHeight="40.0" prefWidth="243.0" text="숙소 등록" />
+            <Button layoutX="29.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#onClickCloseAddRoom" prefHeight="14.0" prefWidth="243.0" text="취소" />
+            <Text layoutX="90.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 등록">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <TextField fx:id="roomNumberText" layoutX="90.0" layoutY="82.0" prefHeight="23.0" prefWidth="181.0" promptText="101호" />
+            <TextField fx:id="priceText" layoutX="90.0" layoutY="141.0" prefHeight="23.0" prefWidth="181.0" promptText="30000" />
+            <TextField fx:id="maxPeopleNum" layoutX="90.0" layoutY="171.0" prefHeight="23.0" prefWidth="181.0" promptText="4" />
+            <ChoiceBox fx:id="roomTypeBox" layoutX="90.0" layoutY="111.0" prefHeight="23.0" prefWidth="181.0" />
+            <TextField fx:id="imageUrlText" layoutX="90.0" layoutY="202.0" prefHeight="23.0" prefWidth="133.0" />
+            <Button layoutX="218.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#onClickImageFind" prefHeight="23.0" prefWidth="52.0" text="추가" />
+            <ListView fx:id="imageUrlList" focusTraversable="false" layoutX="29.0" layoutY="232.0" prefHeight="99.0" prefWidth="243.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="errorModal" layoutX="74.0" layoutY="132.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="80.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="errorText" fill="RED" layoutX="28.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="내용" wrappingWidth="150.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="20.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#onClickCloseErrModal" prefHeight="33.0" prefWidth="160.0" text="닫 기" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

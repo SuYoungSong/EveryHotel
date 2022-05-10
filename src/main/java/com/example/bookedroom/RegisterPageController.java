@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-public class RegisterPageController extends Controller implements Initializable {
+public class RegisterPageController extends Controller {
 
     @FXML private TextField registerMemberIdField;
     @FXML private PasswordField registerMemberPasswordField;
@@ -35,7 +35,6 @@ public class RegisterPageController extends Controller implements Initializable 
     @FXML private TextField registerBusinessCompanyIdFieldFirst;
     @FXML private TextField registerBusinessCompanyIdFieldSecond;
     @FXML private TextField registerBusinessCompanyIdFieldThird;
-    @FXML private ComboBox<String> businessCompanyTypeComboBox;
 
     @FXML private Pane businessMemberPane;
     @FXML private Pane nomalMemberPane;
@@ -69,15 +68,13 @@ public class RegisterPageController extends Controller implements Initializable 
         return temp.substring(0,temp.length()-1);
     }
 
-    // 이미 있는 아이디인지 체크나는 내용 넣어야함.
     boolean overlabCheckId(String id) throws SQLException {
         String memberType = nomalMemberRadioButton.isSelected()?"회원아이디":"업체아이디";
-        String tableName = nomalMemberRadioButton.isSelected()?"회원":"숙박업체";
+        String tableName = nomalMemberRadioButton.isSelected()?"everyhotel.회원":"everyhotel.숙박업체";
 
         ResultSet result = dbc.sendQuryGet("SELECT "+memberType+" FROM "+tableName+" WHERE "+memberType+"=\'"+id+"\';");
-        if (result==null){
+        if (result.next())
             return true;  // 중복된 아이디가 있음
-        }
         return false; // 중복된 아이디가 없음
     }
 
@@ -91,26 +88,37 @@ public class RegisterPageController extends Controller implements Initializable 
         // 입력된 내용을 집합에 저장
         if (nomalMemberRadioButton.isSelected()) {
             phoneNumber = registerMemberPhoneFieldFirst.getText() + "-" + registerMemberPhoneFieldSecond.getText() + "-" + registerMemberPhoneFieldThird.getText();
-            registerData = List.of(registerMemberIdField.getText(), registerMemberPasswordField.getText(), registerMemberNameField.getText(),
-                    phoneNumber, String.valueOf(registerMemberDateField.getValue()));
+            registerData = List.of(registerMemberIdField.getText(),
+                    registerMemberPasswordField.getText(),
+                    registerMemberNameField.getText(),
+                    phoneNumber,
+                    String.valueOf(registerMemberDateField.getValue())
+            );
         } else {
             businessNumber = registerBusinessCompanyIdFieldFirst.getText() + "-" + registerBusinessCompanyIdFieldSecond.getText() + "-" + registerBusinessCompanyIdFieldThird.getText();
             phoneNumber = registerBusinessPhoneFieldFirst.getText() + "-" + registerBusinessPhoneFieldSecond.getText() + "-" + registerBusinessPhoneFieldThird.getText();
-            registerData = List.of(registerBusinessIdField.getText(), registerBusinessPasswordField.getText(), registerBusinessAddressField.getText(), phoneNumber,
-                    registerBusinessNameField.getText(), businessCompanyTypeComboBox.getValue(), businessNumber);
+            registerData = List.of(registerBusinessIdField.getText(),
+                    registerBusinessNameField.getText(),
+                    phoneNumber,
+                    businessNumber,
+                    registerBusinessPasswordField.getText(),
+                    registerBusinessAddressField.getText()
+            );
         }
         System.out.println(registerData);
 
         // 작성하지 않은 항목이 있는지 확인하는 코드
         if (nullCheck(registerData)) {
             modalActive("작성하지 않은 항목이 있습니다.");
-        // 아이디 중복체크
-        }else if (overlabCheckId(idText)){
-            modalActive("중복된 아이디가 있습니다.");
         // 비밀번호가 조건을 만족하는지 확인하는 코드
         }else if (!(nomalMemberRadioButton.isSelected() ? passwordCheck(registerMemberPasswordField) : passwordCheck(registerBusinessPasswordField))) {
             modalActive("비밀번호 조건이 알맞지 않습니다.");
-            // DB에 유저 추가하는 코드 작성 예정
+        // 미성년자인지 확인
+        }else if(false){
+
+        // 아이디 중복체크
+        }else if (overlabCheckId(idText)){
+            modalActive("중복된 아이디가 있습니다.");
         } else {
             String memberType = nomalMemberRadioButton.isSelected() ? "회원" : "숙박업체";
             int temp = dbc.sendQuryPost("INSERT INTO everyhotel." + memberType + " VALUES(" + fieldMerge(registerData) + ")");
@@ -134,13 +142,6 @@ public class RegisterPageController extends Controller implements Initializable 
     @FXML
     void closeModalButton(MouseEvent event) {
         modalPane.setVisible(false);
-    }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        String[]  classify = {"호텔", "모텔", "캠핑", "콘도", "리조트", "민박"};
-        ObservableList<String> companyComboBoxValue = FXCollections.observableArrayList(classify);
-        businessCompanyTypeComboBox.setItems(companyComboBoxValue);
-        businessCompanyTypeComboBox.setValue("호텔");
     }
 }
 
