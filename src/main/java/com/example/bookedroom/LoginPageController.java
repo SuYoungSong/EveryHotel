@@ -55,7 +55,6 @@ public class LoginPageController extends Controller{
                 String id = result.getString(memberId);
                 String pw = result.getString("비밀번호");
 
-                // 아이디 비밀번호가 일치한다면
                 if (id.equals(loginIdField.getText()) && pw.equals(loginPasswordField.getText())) {
                     String fxmlPath = nomalMemberRadioButton.isSelected() ? "MemberMainPageUI.fxml" : "BusinessMainPageUI.fxml";
                     LoginData ld = new LoginData(memberType, id);

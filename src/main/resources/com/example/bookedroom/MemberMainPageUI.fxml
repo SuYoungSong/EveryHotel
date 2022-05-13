@@ -29,5 +29,30 @@
          </font>
       </Button>
       <Button layoutX="275.0" layoutY="553.0" mnemonicParsing="false" onMouseClicked="#onClickLogoutButton" text="로그아웃" />
+      <Pane fx:id="outMemberOut" layoutX="38.0" layoutY="172.0" prefHeight="189.0" prefWidth="275.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="111.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="주의">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="14.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="모든 정보가 사라집니다. 탈퇴하시겠습니까?" wrappingWidth="256.125">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Button layoutX="23.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onClickOutModalAccept" prefHeight="50.0" prefWidth="90.0" text="예">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="165.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onClickOutModalCLose" prefHeight="50.0" prefWidth="90.0" text="아니요">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button layoutX="14.0" layoutY="553.0" mnemonicParsing="false" onMouseClicked="#onClickMemberOut" text="회원탈퇴" />
    </children>
 </AnchorPane>

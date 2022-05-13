@@ -30,8 +30,13 @@ application {
 }
 
 javafx {
-    version = '11.0.2'
+    version = '18.0.1'
     modules = ['javafx.controls', 'javafx.fxml']
+}
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
@@ -44,6 +49,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
 
 jlink {
     imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")

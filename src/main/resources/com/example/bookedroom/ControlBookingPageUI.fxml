@@ -24,7 +24,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ScrollPane layoutY="113.0" prefHeight="487.0" prefWidth="350.0" vbarPolicy="NEVER" />
+      <ScrollPane fx:id="scrollPane" layoutY="113.0" prefHeight="487.0" prefWidth="350.0" vbarPolicy="NEVER" />
       <Pane fx:id="addRoomModal" layoutX="26.0" layoutY="107.0" prefHeight="425.0" prefWidth="300.0" style="-fx-background-color: lightgray;" visible="false">
          <children>
             <Text layoutX="41.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격:">
@@ -81,6 +81,48 @@
                </font>
             </Text>
             <Button layoutX="20.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#onClickCloseErrModal" prefHeight="33.0" prefWidth="160.0" text="닫 기" />
+         </children>
+      </Pane>
+      <Pane fx:id="changeRoomInfoPane" layoutX="26.0" layoutY="65.0" prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="77.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 정보 변경">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="29.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="호수 :">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="29.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="정원 :">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="29.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격 :">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="29.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="분류 :">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="29.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이미지">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="ciRoomNumber" layoutX="93.0" layoutY="54.0" prefHeight="23.0" prefWidth="181.0" />
+            <TextField fx:id="ciMaxPeople" layoutX="93.0" layoutY="122.0" prefHeight="23.0" prefWidth="181.0" />
+            <TextField fx:id="ciPrice" layoutX="93.0" layoutY="158.0" prefHeight="23.0" prefWidth="181.0" />
+            <ComboBox fx:id="ciRoomType" layoutX="93.0" layoutY="88.0" prefHeight="23.0" prefWidth="181.0" />
+            <ListView fx:id="ciImageList" layoutX="29.0" layoutY="225.0" prefHeight="176.0" prefWidth="243.0" />
+            <Button layoutX="93.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#onClickCiImageAdd" prefHeight="23.0" prefWidth="89.0" text="이미지추가" />
+            <Button layoutX="185.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#onClickCiImageDel" prefHeight="23.0" prefWidth="89.0" text="이미지삭제" />
+            <Button layoutX="70.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#onClickChangeRoomInfo" prefHeight="30.0" prefWidth="160.0" text="변경" />
          </children>
       </Pane>
    </children>

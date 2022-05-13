@@ -28,7 +28,20 @@
           </Tab>
           <Tab text="일자별 조회">
                <content>
-                  <ScrollPane fx:id="DateSearchPane" prefHeight="200.0" prefWidth="200.0" />
+                  <ScrollPane fx:id="DateSearchPane" prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <TableView fx:id="dateTableView" prefHeight="521.0" prefWidth="350.0">
+                          <columns>
+                            <TableColumn fx:id="tcRoomName" prefWidth="75.0" style="-fx-alignment: center; -fx-font-size: 15px;" text="숙소명" />
+                            <TableColumn fx:id="tcYesterday" prefWidth="75.0" style="-fx-alignment: center; -fx-font-size: 15px;" text="어제" />
+                              <TableColumn fx:id="tcToday" prefWidth="75.0" style="-fx-alignment: center; -fx-font-size: 15px;" text="오늘" />
+                              <TableColumn fx:id="tcNextday" prefWidth="75.0" style="-fx-alignment: center; -fx-font-size: 15px;" text="내일" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </content></ScrollPane>
                </content>
           </Tab>
         </tabs>

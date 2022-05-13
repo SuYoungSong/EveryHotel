@@ -23,6 +23,7 @@ public class DataBaseConnection {
             System.out.println(SQL);
             resultSet = statment.executeQuery(SQL);
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             resultSet = null;
         } catch (Exception e){
             e.printStackTrace();
@@ -35,6 +36,7 @@ public class DataBaseConnection {
             System.out.println(SQL);
             statment.execute(SQL);
         } catch(SQLException e) {
+            System.out.println(e.getMessage());
             return -1;              // 잘못된 sql문 입력
         } catch (Exception e) {
             e.printStackTrace();    // 나머지 에러

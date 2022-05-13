@@ -1,18 +1,16 @@
 package com.example.bookedroom;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 
 public class RegisterPageController extends Controller {
@@ -35,7 +33,9 @@ public class RegisterPageController extends Controller {
     @FXML private TextField registerBusinessCompanyIdFieldFirst;
     @FXML private TextField registerBusinessCompanyIdFieldSecond;
     @FXML private TextField registerBusinessCompanyIdFieldThird;
-
+    @FXML private Button gotoMainButton;
+    @FXML private Button registerButton;
+    @FXML private Button modalCloseButton;
     @FXML private Pane businessMemberPane;
     @FXML private Pane nomalMemberPane;
     @FXML private RadioButton nomalMemberRadioButton;
@@ -44,12 +44,12 @@ public class RegisterPageController extends Controller {
     @FXML private Text modalText;
     @FXML private Pane modalPane;
 
-
     @FXML
     void moveMainPage(MouseEvent event) throws IOException {
         movePage(event, "MainPageUI.fxml");
     }
     void modalActive(String msg){
+        registerButton.setDisable(true);
         modalText.setText(msg);
         modalPane.setVisible(true);
     }
@@ -80,6 +80,11 @@ public class RegisterPageController extends Controller {
 
     @FXML
     void onClickRegisterButton(MouseEvent event) throws SQLException {
+        Date time = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy");
+        LocalDate memberBirDate = registerMemberDateField.getValue();
+        int nowYear = Integer.valueOf(format.format(time));
+
         List<String> registerData = new ArrayList<>();
         String phoneNumber;
         String businessNumber;
@@ -114,8 +119,8 @@ public class RegisterPageController extends Controller {
         }else if (!(nomalMemberRadioButton.isSelected() ? passwordCheck(registerMemberPasswordField) : passwordCheck(registerBusinessPasswordField))) {
             modalActive("비밀번호 조건이 알맞지 않습니다.");
         // 미성년자인지 확인
-        }else if(false){
-
+        }else if(nomalMemberRadioButton.isSelected() && !(nowYear - Integer.valueOf(memberBirDate.getYear()) > 18)){
+            modalActive("미성년자는 가입할 수 없습니다.");
         // 아이디 중복체크
         }else if (overlabCheckId(idText)){
             modalActive("중복된 아이디가 있습니다.");
@@ -125,6 +130,9 @@ public class RegisterPageController extends Controller {
             if (temp == -1) {
                 modalActive("양식을 맞추어 입력해주세요.");
             }
+            modalCloseButton.setDisable(true);
+            gotoMainButton.setVisible(true);
+            modalActive("회원가입이 완료되었습니다.");
         }
     }
 
@@ -141,6 +149,7 @@ public class RegisterPageController extends Controller {
 
     @FXML
     void closeModalButton(MouseEvent event) {
+        registerButton.setDisable(false);
         modalPane.setVisible(false);
     }
 }
