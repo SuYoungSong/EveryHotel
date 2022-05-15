@@ -147,24 +147,21 @@ public class BusinessSearchBookingPageController extends Controller implements I
         }
         // 행열 바꿔서 통계 내기
         // 참고 : https://hyunmin1906.tistory.com/274
-        result = dbc.sendQuryGet(
-                "select 숙소.호실," +
-                "coalesce(case when 예약.예약일=Date(now() - interval 1 day) THEN count(예약.예약번호) END,0) AS 어제,"+
-                "coalesce(case when 예약.예약일=Date(now()) THEN count(예약.예약번호) END,0) AS 오늘,"+
-                "coalesce(case when 예약.예약일=Date(now() + interval 1 day) THEN count(예약.예약번호) END,0) AS 내일 "+
-                "from everyhotel.예약, everyhotel.숙소 "+
-                "where 예약.숙소번호=숙소.숙소번호 and 숙소.업체아이디=\'"+ld.getId()+"\' "+
-                "group by 예약.숙소번호 "+
-                "order by 예약.숙소번호"+";"
-        );
-
+        result = dbc.sendQuryGet("select 숙소.호실, " +
+                "\tcoalesce(case when DATE_FORMAT(예약.예약일,'%Y-%m')=DATE_FORMAT(now() - interval 1 MONTH,'%Y-%m') THEN count(예약.예약번호) END,0) AS 이전달, " +
+                "    coalesce(case when DATE_FORMAT(예약.예약일,'%Y-%m')=DATE_FORMAT(now(),'%Y-%m') THEN count(예약.예약번호) END,0) AS 이번달, " +
+                "    coalesce(case when DATE_FORMAT(예약.예약일,'%Y-%m')=DATE_FORMAT(now() + interval 1 MONTH,'%Y-%m') THEN count(예약.예약번호) END,0) AS 다음달 " +
+                "    from everyhotel.예약 right join everyhotel.숙소 on 예약.숙소번호=숙소.숙소번호 " +
+                "    where 업체아이디=\'"+ld.getId()+"\' " +
+                "    group by 숙소.호실" +
+                "    order by 숙소.호실;");
 
         try {
             while (result.next()) {
                 String roomName = result.getString("호실");
-                int yesterday = result.getInt("어제");
-                int today = result.getInt("오늘");
-                int nextday =  result.getInt("내일");
+                int yesterday = result.getInt("이전달");
+                int today = result.getInt("이번달");
+                int nextday =  result.getInt("다음달");
                 dateTableView.getItems().add(new DateFind(roomName, yesterday, today, nextday));
             }
         }catch(Exception e){

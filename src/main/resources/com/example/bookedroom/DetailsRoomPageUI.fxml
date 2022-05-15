@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -11,7 +12,7 @@
    <children>
       <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
          <children>
-            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveBookingPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
+            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveBookingPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" visible="false" />
             <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
                <children>
                   <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
@@ -19,33 +20,155 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="imagePane" layoutY="50.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: lightgray;">
+      <Pane fx:id="imagePane" layoutY="50.0" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #E4E4E4;">
          <children>
-            <Pane fx:id="leftImageChange" layoutX="23.0" layoutY="85.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
-            <Pane fx:id="rightImageChange" layoutX="299.0" layoutY="85.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
+            <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane fx:id="leftImageChange" layoutX="22.0" layoutY="85.0" onMouseClicked="#onClickLeftImageChange" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
+            <Pane fx:id="rightImageChange" layoutX="299.0" layoutY="85.0" onMouseClicked="#onClickRightImageChange" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: black;" />
          </children>
       </Pane>
-      <Button layoutY="550.0" mnemonicParsing="false" onMouseClicked="#onClickBooking" prefHeight="50.0" prefWidth="350.0" text="예약하기" />
-      <Text layoutX="12.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자번호 :" />
-      <Text layoutX="35.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="업체명 :" />
-      <Text layoutX="47.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="문의 :" />
-      <Text fx:id="roomName" layoutX="12.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+      <Button layoutY="550.0" mnemonicParsing="false" onMouseClicked="#onClickSelDateModal" prefHeight="50.0" prefWidth="350.0" text="예약하기" />
+      <Text layoutX="12.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자번호 :" wrappingWidth="295.20703125">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="12.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 문의    :" wrappingWidth="295.20703125">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text fx:id="roomName" layoutX="12.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="223.302734375">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Text fx:id="roomAddress" layoutX="15.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+      <Text fx:id="roomAddress" fill="#8d8d8d" layoutX="12.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="265.109375">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fx:id="roomPrice" layoutX="262.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null원">
+      <Text fx:id="roomPrice" layoutX="237.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null원" textAlignment="RIGHT" wrappingWidth="98.5673828125">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Text fx:id="companyName" layoutX="87.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
-      <Text fx:id="companyPhone" layoutX="87.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
-      <Text fx:id="companyId" layoutX="87.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" />
+      <Text fx:id="companyPhone" layoutX="107.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text fx:id="companyId" layoutX="107.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="12.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 정원    :" wrappingWidth="295.20703125">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="maxPeopleNumText" layoutX="107.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null인">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#9e9c9c" layoutX="12.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 리뷰">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ScrollPane fx:id="reviewScrollPane" hbarPolicy="NEVER" layoutY="413.0" prefHeight="138.0" prefWidth="350.0" />
+      <Pane fx:id="dateModalPane" layoutX="53.0" layoutY="190.0" prefHeight="287.0" prefWidth="245.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="24.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이용일을 지정해주세요" underline="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Button layoutX="15.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#onClickBooking" prefHeight="30.0" prefWidth="215.0" text="다 음" />
+            <Text fill="#909090" layoutX="15.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="투숙일">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text fill="#909090" layoutX="15.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="퇴실일">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Button layoutX="15.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#onClickSelDateCalcelButton" prefHeight="30.0" prefWidth="215.0" text="취 소" />
+            <DatePicker fx:id="datePickerStartDate" layoutX="15.0" layoutY="72.0" prefHeight="23.0" prefWidth="215.0" />
+            <DatePicker fx:id="datePickerEndDate" layoutX="15.0" layoutY="144.0" prefHeight="23.0" prefWidth="215.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="bkPane" layoutX="53.0" layoutY="190.0" prefHeight="287.0" prefWidth="245.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="39.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="예약 하시겠습니까?" underline="true">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Button layoutX="15.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#onClickBKAccept" prefHeight="30.0" prefWidth="215.0" text="예 약" />
+            <Text fill="#909090" layoutX="15.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="장소">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text fill="#909090" layoutX="15.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙박 기간">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text fill="#909090" layoutX="15.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Button layoutX="15.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#onClickBKcancel" prefHeight="30.0" prefWidth="215.0" text="취 소" />
+            <Text fx:id="bkModalAdressText" layoutX="15.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="194.12109375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="bkModalDateText" layoutX="15.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="194.12109375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text fx:id="bkModalPriceText" layoutX="15.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="194.12109375">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="infoModal" layoutX="53.0" layoutY="208.0" prefHeight="153.0" prefWidth="245.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="103.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="infoModalText" fill="RED" layoutX="28.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="null" wrappingWidth="196.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#onClickCloseInfoModal" prefHeight="23.0" prefWidth="196.0" text="닫 기" />
+         </children>
+      </Pane>
+      <Pane fx:id="successBkPane" layoutX="76.0" layoutY="208.0" prefHeight="172.0" prefWidth="200.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="63.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="예약 완료">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소가 예약되었습니다.">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="17.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#onClickMoveBKSerPage" prefHeight="30.0" prefWidth="166.0" text="예약 내역 보기" />
+            <Button layoutX="17.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#onClickSucessModalClose" prefHeight="30.0" prefWidth="166.0" text="닫 기" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

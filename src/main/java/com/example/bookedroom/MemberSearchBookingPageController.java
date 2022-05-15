@@ -32,8 +32,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
     @FXML
     void onClickReviewWrite(MouseEvent event) throws SQLException, IOException {
         LoginData ld = new LoginData();
-        System.out.println(nd.getParent().getChildrenUnmodifiable());
-        System.out.println(nd.getParent().getChildrenUnmodifiable().size());
+        Label bn = (Label) nd.getParent().getChildrenUnmodifiable().get(0);
         Label rnb = (Label) nd.getParent().getChildrenUnmodifiable().get(1);
         Label sd = (Label) nd.getParent().getChildrenUnmodifiable().get(5);
         Label ed = (Label) nd.getParent().getChildrenUnmodifiable().get(6);
@@ -47,7 +46,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
 
         // 리뷰작성인 경우
         if (tempBtn.getText().equals("리뷰작성")){
-            dbc.sendQuryPost("insert into everyhotel.리뷰(리뷰내용,평점,작성일자,숙소번호) values"+ "(\'" + ct + "\'," + score + ",\'" + sdf.format(nowDate) + "\'," + Integer.valueOf(rnb.getText()) + ");" );
+            dbc.sendQuryPost("insert into everyhotel.리뷰(리뷰내용,평점,작성일자,숙소번호,예약번호) values"+ "(\'" + ct + "\'," + score + ",\'" + sdf.format(nowDate) + "\'," + Integer.valueOf(rnb.getText()) + "," + Integer.valueOf(bn.getText()) +");" );
             // 리뷰 수정인 경우
         }else{
             ResultSet result = dbc.sendQuryGet("select everyhotel.리뷰.리뷰번호 from everyhotel.리뷰,everyhotel.예약 where everyhotel.예약.숙소번호="+ Integer.valueOf(rnb.getText()) +" and everyhotel.예약.예약일=\'" + sd.getText().substring(6) + "\' and everyhotel.예약.퇴실일=\'" + ed.getText().substring(6) + "\' and everyhotel.예약.회원아이디=\'" + ld.getId() + "\';");
@@ -141,7 +140,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
                 mp.setLayoutX(15);
                 mp.setLayoutY(45);
 
-                Label rp = new Label("가격 :  " + roomPrice);
+                Label rp = new Label("1박 가격 :  " + roomPrice + "원");
                 rp.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 20;");
                 rp.setLayoutX(100);
                 rp.setLayoutY(45);
@@ -185,7 +184,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
                     cancelBooking.setPrefWidth(280);
                 } else {
                         //퇴실일 이후인 경우
-                        ResultSet result2 = dbc.sendQuryGet("select * from everyhotel.리뷰 left outer join everyhotel.예약 on everyhotel.리뷰.숙소번호=everyhotel.예약.숙소번호 where everyhotel.예약.예약번호=" + bn.getText() + ";");
+                        ResultSet result2 = dbc.sendQuryGet("select * from everyhotel.리뷰 natural join everyhotel.예약 where everyhotel.리뷰.예약번호=" + bn.getText() + ";");
                     if( (result2.next())) {
                         //이미 등록된 리뷰가 있는경우 리뷰 수정으로 버튼 변경
                         writeReview.setText("리뷰수정");
@@ -233,7 +232,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
         reviewPane.setVisible(true);
         try {
             if (tempBtn.getText().equals("리뷰수정")) {
-                ResultSet result = dbc.sendQuryGet("select 리뷰내용, 평점 from everyhotel.리뷰 left outer join everyhotel.예약 on everyhotel.리뷰.숙소번호=everyhotel.예약.숙소번호 where everyhotel.예약.예약번호=" + Integer.valueOf(bn.getText()) + ";");
+                ResultSet result = dbc.sendQuryGet("select 리뷰내용, 평점 from everyhotel.리뷰 left outer join everyhotel.예약 on everyhotel.리뷰.숙소번호=everyhotel.예약.숙소번호 where everyhotel.리뷰.예약번호=" + Integer.valueOf(bn.getText()) + ";");
                 result.next();
                 int sn = result.getInt("평점");
                 String tp = "";

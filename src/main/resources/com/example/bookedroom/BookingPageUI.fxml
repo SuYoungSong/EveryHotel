@@ -33,10 +33,35 @@
             <Font size="17.0" />
          </font>
       </Text>
-      <DatePicker fx:id="startDate" layoutX="84.0" layoutY="69.0" />
-      <DatePicker fx:id="endDate" layoutX="84.0" layoutY="103.0" />
-      <TextField fx:id="peopleNum" layoutX="84.0" layoutY="137.0" prefHeight="23.0" prefWidth="163.0" />
-      <Button layoutX="263.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#onClickBookingSearch" prefHeight="91.0" prefWidth="66.0" text="Search" />
-      <ScrollPane fx:id="bookingScrollPane" hbarPolicy="NEVER" layoutY="176.0" prefHeight="437.0" prefWidth="350.0" />
+      <DatePicker fx:id="startDate" layoutX="84.0" layoutY="69.0" prefHeight="23.0" prefWidth="170.0" />
+      <DatePicker fx:id="endDate" layoutX="84.0" layoutY="103.0" prefHeight="23.0" prefWidth="170.0" />
+      <TextField fx:id="peopleNum" layoutX="84.0" layoutY="137.0" prefHeight="23.0" prefWidth="141.0" />
+      <Button layoutX="263.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#onClickBookingSearch" prefHeight="122.0" prefWidth="66.0" text="검색" />
+      <ScrollPane fx:id="bookingScrollPane" hbarPolicy="NEVER" layoutY="204.0" prefHeight="396.0" prefWidth="350.0" />
+      <Text layoutX="43.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="분류">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="roomTypeComboBox" layoutX="84.0" layoutY="168.0" prefHeight="23.0" prefWidth="141.0" />
+      <CheckBox fx:id="roomPeopleCheckBox" layoutX="233.0" layoutY="141.0" mnemonicParsing="false" selected="true" />
+      <CheckBox fx:id="roomTypeCheckBox" layoutX="233.0" layoutY="172.0" mnemonicParsing="false" selected="true" />
+      <Pane fx:id="infoModalPane" layoutX="46.0" layoutY="186.0" prefHeight="191.0" prefWidth="246.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Text layoutX="100.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <Text fx:id="infoModalText" fill="RED" layoutX="22.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="내용" wrappingWidth="205.12109375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button layoutX="22.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#onClickModalCloseButton" prefHeight="23.0" prefWidth="205.0" text="닫 기" />
+         </children>
+      </Pane>
+      <Pane fx:id="newFXMLPane" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: white;" visible="false" />
+      <Pane fx:id="newFXMLCloseButton" layoutX="6.0" layoutY="5.0" onMouseClicked="#onClickCloseNewFXML" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow;" visible="false" />
    </children>
 </AnchorPane>

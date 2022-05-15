@@ -138,8 +138,8 @@ public class ControlBookingPageController extends Controller implements Initiali
         fc.getExtensionFilters().add(imgType);
         File selectedFile = fc.showOpenDialog(null); // 창을 특정 위치에 띄운다. null==기본
         if (selectedFile != null) {
-            imageUrlText.setText(String.valueOf(selectedFile));
-            imUrl.add(String.valueOf(selectedFile));
+            imageUrlText.setText(selectedFile.toURI().toString());
+            imUrl.add(selectedFile.toURI().toString());
             ObservableList<String> imUrlList = FXCollections.observableList(imUrl);
             imageUrlList.setItems(imUrlList);
         }
@@ -232,7 +232,7 @@ public class ControlBookingPageController extends Controller implements Initiali
                 tp.setLayoutX(120);
                 tp.setLayoutY(30);
 
-                Label pr = new Label("가격 :  " + roomPrice);
+                Label pr = new Label("1박 가격 :  " + roomPrice);
                 pr.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 20;");
                 pr.setLayoutX(120);
                 pr.setLayoutY(50);
