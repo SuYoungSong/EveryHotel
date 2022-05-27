@@ -1,0 +1,176 @@
+AnchorPane{
+    -fx-background-color:#1b1925;
+}
+
+BorderPane {
+    -fx-background-image: url('back-arrow.png');
+}
+
+Button {
+    -fx-min-width: 110px;
+    -fx-max-width: 110px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#leftImageChange {
+    -fx-background-image: url('left-arrow.png');
+}
+
+#rightImageChange{
+    -fx-background-image: url('right-arrow.png');
+}
+Button:hover {
+      -fx-min-height: 37px;
+      -fx-max-height: 37px;
+}
+
+#Box {
+    -fx-background-color: none;
+    -fx-border-style: solid none none none;
+    -fx-border-width: 1;
+    -fx-border-color: #b0886a;
+}
+
+#box_height {
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-radius: 18;
+}
+
+#birthday {
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+}
+
+#join_button {
+    -fx-min-width: 243px;
+    -fx-max-width: 243px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#write_button {
+    -fx-min-width: 243px;
+    -fx-max-width: 243px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#reservation_box {
+    -fx-min-width: 280px;
+    -fx-max-width: 280px;
+    -fx-min-height: 50px;
+    -fx-max-height: 50px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#bkg {
+    -fx-background-image: url("logo.png");
+    -fx-background-position: top center;
+    -fx-background-repeat: no-repeat;
+}
+
+#id_box {
+    -fx-min-width: 243px;
+    -fx-max-width: 243px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#pw_box {
+    -fx-min-width: 243px;
+    -fx-max-width: 243px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#phonenumber {
+    -fx-min-width: 75px;
+    -fx-max-width: 75px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#bkg2 {
+    -fx-background-image: url("logo.png");
+    -fx-background-position: bottom center;
+    -fx-background-repeat: no-repeat;
+}
+
+#clear_box {
+    -fx-background-color: #1b1925;
+}
+
+#hotel_box {
+    -fx-min-width: 245px;
+    -fx-max-width: 245px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#hotel_box2 {
+    -fx-min-width: 180px;
+    -fx-max-width: 180px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#hotel_img_box {
+    -fx-min-width: 180px;
+    -fx-max-width: 180px;
+    -fx-min-height: 20px;
+    -fx-max-height: 20px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#img_plus {
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+    -fx-min-height: 20px;
+    -fx-max-height: 20px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#modify_button {
+    -fx-min-width: 230px;
+    -fx-max-width: 230px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#addmin_box {
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-background-color: #eeeeee;
+    -fx-background-radius: 18;
+}
+
+#model{
+    -fx-background-color: #1b1925;
+    -fx-border-width: 2px;
+    -fx-border-color: #b0886a;
+}

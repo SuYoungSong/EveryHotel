@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
@@ -12,132 +18,72 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.RegisterPageController">
+<AnchorPane prefHeight="600.0" prefWidth="350.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookedroom.RegisterPageController">
    <children>
-      <Pane prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: orange;">
-         <children>
-            <Pane layoutX="6.0" layoutY="5.0" onMouseClicked="#moveMainPage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: black;" />
-            <Pane layoutX="100.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: gray;">
-               <children>
-                  <Text layoutX="52.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="150x30" />
-               </children>
-            </Pane>
-         </children>
-      </Pane>
-      <Button fx:id="registerButton" layoutX="36.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#onClickRegisterButton" prefHeight="50.0" prefWidth="275.0" text="가입 하기">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Button>
-      <RadioButton fx:id="BusinessMemberRadioButton" layoutX="181.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#changeForm" text="기업 회원">
+      <Pane id="Box" layoutX="-1.0" layoutY="50.0" prefHeight="2.0" prefWidth="350.0" />
+      <RadioButton fx:id="BusinessMemberRadioButton" layoutX="187.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#changeForm" text="기업 회원" textFill="#eeeeee">
          <toggleGroup>
             <ToggleGroup fx:id="memberType" />
          </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="nomalMemberRadioButton" layoutX="93.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#changeForm" selected="true" text="개인 회원" toggleGroup="$memberType" />
-      <Text layoutX="117.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 가입">
          <font>
-            <Font size="26.0" />
+            <Font name="Malgun Gothic" size="10.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="nomalMemberRadioButton" layoutX="99.0" layoutY="80.0" mnemonicParsing="false" onMouseClicked="#changeForm" selected="true" text="개인 회원" textFill="#eeeeee" toggleGroup="$memberType">
+         <font>
+            <Font name="Malgun Gothic" size="10.0" />
+         </font></RadioButton>
+      <Text fill="#b0886a" layoutX="131.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원 가입">
+         <font>
+            <Font name="Malgun Gothic Bold" size="20.0" />
          </font>
       </Text>
-      <Pane fx:id="businessMemberPane" layoutY="119.0" prefHeight="401.0" prefWidth="350.0" visible="false">
+      <Pane fx:id="businessMemberPane" layoutY="119.0" prefHeight="401.0" prefWidth="350.0" stylesheets="@style.css" visible="false">
          <children>
-            <TextField fx:id="registerBusinessIdField" layoutX="106.0" layoutY="27.0" prefHeight="30.0" prefWidth="215.0" />
-            <PasswordField fx:id="registerBusinessPasswordField" layoutX="106.0" layoutY="75.0" prefHeight="30.0" prefWidth="215.0" promptText="영문/숫자/특수문자 4자리 이상" />
-            <Text layoutX="30.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호">
+            <TextField id="box_height" fx:id="registerBusinessIdField" layoutX="49.0" layoutY="22.0" prefHeight="35.0" prefWidth="271.0" />
+            <PasswordField id="box_height" fx:id="registerBusinessPasswordField" layoutX="49.0" layoutY="87.0" prefHeight="35.0" prefWidth="271.0" promptText="영문/숫자/특수문자 4자리 이상" />
+            <Text fill="WHITE" layoutX="46.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="46.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+            <Text fill="WHITE" layoutX="46.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="46.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="업체명">
+            <Text fill="WHITE" layoutX="46.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="업체명">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField fx:id="registerBusinessNameField" layoutX="106.0" layoutY="124.0" prefHeight="30.0" prefWidth="215.0" />
-            <Text layoutX="46.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
+            <TextField id="box_height" fx:id="registerBusinessNameField" layoutX="46.0" layoutY="154.0" prefHeight="35.0" prefWidth="271.0" />
+            <Text fill="WHITE" layoutX="46.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자번호">
+            <Text fill="WHITE" layoutX="40.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자번호">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="245.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+            <TextField id="box_height" fx:id="registerBusinessPhoneFieldFirst" alignment="CENTER" layoutX="45.0" layoutY="217.0" prefHeight="30.0" prefWidth="70.0" promptText="010" />
+            <TextField id="box_height" fx:id="registerBusinessPhoneFieldSecond" alignment="CENTER" layoutX="135.0" layoutY="217.0" prefHeight="30.0" prefWidth="80.0" promptText="1234" />
+            <TextField id="box_height" fx:id="registerBusinessPhoneFieldThird" alignment="CENTER" layoutX="230.0" layoutY="217.0" prefHeight="30.0" prefWidth="80.0" promptText="1234" />
+            <TextField id="box_height" fx:id="registerBusinessAddressField" layoutX="45.0" layoutY="283.0" prefHeight="35.0" prefWidth="271.0" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="주소">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="163.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField fx:id="registerBusinessPhoneFieldFirst" layoutX="106.0" layoutY="172.0" prefHeight="30.0" prefWidth="50.0" promptText="010" />
-            <TextField fx:id="registerBusinessPhoneFieldSecond" layoutX="178.0" layoutY="171.0" prefHeight="30.0" prefWidth="60.0" promptText="1234" />
-            <TextField fx:id="registerBusinessPhoneFieldThird" layoutX="261.0" layoutY="171.0" prefHeight="30.0" prefWidth="60.0" promptText="1234" />
-            <TextField fx:id="registerBusinessAddressField" layoutX="106.0" layoutY="219.0" prefHeight="30.0" prefWidth="215.0" />
-            <Text layoutX="62.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="주소">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField fx:id="registerBusinessCompanyIdFieldFirst" layoutX="106.0" layoutY="266.0" prefHeight="30.0" prefWidth="50.0" />
-            <TextField fx:id="registerBusinessCompanyIdFieldSecond" layoutX="184.0" layoutY="265.0" prefHeight="30.0" prefWidth="40.0" />
-            <TextField fx:id="registerBusinessCompanyIdFieldThird" layoutX="256.0" layoutY="266.0" prefHeight="30.0" prefWidth="70.0" />
-            <Text layoutX="237.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="163.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
+            <TextField id="box_height" fx:id="registerBusinessCompanyIdFieldFirst" alignment="CENTER" layoutX="45.0" layoutY="347.0" prefHeight="30.0" prefWidth="70.0" promptText="123" />
+            <TextField id="box_height" fx:id="registerBusinessCompanyIdFieldSecond" alignment="CENTER" layoutX="142.0" layoutY="347.0" prefHeight="30.0" prefWidth="60.0" promptText="12" />
+            <TextField id="box_height" fx:id="registerBusinessCompanyIdFieldThird" alignment="CENTER" layoutX="220.0" layoutY="347.0" prefHeight="30.0" prefWidth="90.0" promptText="12345" />
          </children>
       </Pane>
       <Pane fx:id="nomalMemberPane" layoutY="119.0" prefHeight="401.0" prefWidth="350.0">
          <children>
-            <TextField fx:id="registerMemberIdField" layoutX="108.0" layoutY="20.0" prefHeight="40.0" prefWidth="215.0" />
-            <PasswordField fx:id="registerMemberPasswordField" layoutX="108.0" layoutY="81.0" prefHeight="40.0" prefWidth="215.0" promptText="영문/숫자/특수문자 4자리 이상" />
-            <TextField fx:id="registerMemberNameField" layoutX="108.0" layoutY="143.0" prefHeight="40.0" prefWidth="215.0" />
-            <Text layoutX="32.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="48.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="64.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField fx:id="registerMemberPhoneFieldFirst" layoutX="108.0" layoutY="201.0" prefHeight="40.0" prefWidth="50.0" promptText="010" />
-            <Text layoutX="48.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="32.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="생년월일">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <TextField fx:id="registerMemberPhoneFieldSecond" layoutX="180.0" layoutY="200.0" prefHeight="40.0" prefWidth="60.0" promptText="1234" />
-            <TextField fx:id="registerMemberPhoneFieldThird" layoutX="263.0" layoutY="200.0" prefHeight="40.0" prefWidth="60.0" promptText="1234" />
-            <DatePicker fx:id="registerMemberDateField" layoutX="108.0" layoutY="263.0" prefHeight="40.0" prefWidth="215.0" promptText="1999.05.05" showWeekNumbers="true" />
             <Text layoutX="165.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
                <font>
                   <Font size="16.0" />
@@ -148,26 +94,72 @@
                   <Font size="16.0" />
                </font>
             </Text>
-         </children>
-      </Pane>
-      <Pane fx:id="modalPane" layoutX="39.0" layoutY="199.0" prefHeight="160.0" prefWidth="287.0" style="-fx-background-color: lightgray;" visible="false">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <children>
-            <Text layoutX="112.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+            <TextField id="box_height" fx:id="registerMemberIdField" layoutX="55.0" layoutY="20.0" prefHeight="33.0" prefWidth="243.0" />
+            <PasswordField id="box_height" fx:id="registerMemberPasswordField" layoutX="55.0" layoutY="85.0" prefHeight="33.0" prefWidth="243.0" promptText="영문/숫자/특수문자 4자리 이상" />
+            <TextField id="box_height" fx:id="registerMemberNameField" layoutX="55.0" layoutY="149.0" prefHeight="33.0" prefWidth="243.0" />
+            <Text fill="#eeeeee" layoutX="54.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호">
                <font>
-                  <Font size="32.0" />
+                  <Font name="Malgun Gothic" size="13.0" />
                </font>
             </Text>
-            <Text fx:id="modalText" layoutX="29.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="텍스트 입력" wrappingWidth="243.0625">
+            <Text fill="#eeeeee" layoutX="55.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="연락처">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Malgun Gothic" size="13.0" />
                </font>
             </Text>
-            <Button fx:id="modalCloseButton" layoutX="82.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#closeModalButton" prefHeight="30.0" prefWidth="125.0" text="닫 기" />
-            <Button fx:id="gotoMainButton" layoutX="82.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#moveMainPage" prefHeight="30.0" prefWidth="125.0" text="메인으로" visible="false" />
+            <Text fill="#eeeeee" layoutX="54.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름">
+               <font>
+                  <Font name="Malgun Gothic" size="13.0" />
+               </font>
+            </Text>
+            <TextField id="box_height" fx:id="registerMemberPhoneFieldFirst" layoutX="55.0" layoutY="212.0" prefHeight="33.0" prefWidth="60.0" promptText="010" />
+            <Text fill="#eeeeee" layoutX="55.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디">
+               <font>
+                  <Font name="Malgun Gothic" size="13.0" />
+               </font>
+            </Text>
+            <Text fill="#eeeeee" layoutX="54.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="생년월일">
+               <font>
+                  <Font name="Malgun Gothic" size="13.0" />
+               </font>
+            </Text>
+            <TextField id="box_height" fx:id="registerMemberPhoneFieldSecond" layoutX="147.0" layoutY="212.0" prefHeight="40.0" prefWidth="60.0" promptText="1234" />
+            <TextField id="box_height" fx:id="registerMemberPhoneFieldThird" layoutX="237.0" layoutY="212.0" prefHeight="40.0" prefWidth="60.0" promptText="1234" />
+            <DatePicker id="birthday" fx:id="registerMemberDateField" layoutX="55.0" layoutY="278.0" prefHeight="33.0" prefWidth="243.0" promptText="1999.05.05" showWeekNumbers="true" />
+            <Pane fx:id="modalPane" layoutX="32.0" layoutY="102.0" prefHeight="160.0" prefWidth="287.0" style="-fx-background-color: #1b1925;" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Text fill="#eeeeee" layoutX="120.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+                     <font>
+                        <Font name="Malgun Gothic Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="modalText" fill="#eeeeee" layoutX="29.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="텍스트 입력" wrappingWidth="243.0625">
+                     <font>
+                        <Font name="Malgun Gothic" size="13.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="modalCloseButton" layoutX="89.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#closeModalButton" prefHeight="30.0" prefWidth="125.0" text="닫 기">
+                     <font>
+                        <Font name="Malgun Gothic" size="11.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="gotoMainButton" layoutX="82.0" layoutY="123.0" mnemonicParsing="false" onMouseClicked="#moveMainPage" prefHeight="30.0" prefWidth="125.0" text="메인으로" visible="false" />
+               </children>
+            </Pane>
          </children>
       </Pane>
+      <Button id="join_button" fx:id="registerButton" contentDisplay="CENTER" layoutX="54.0" layoutY="528.0" maxWidth="177.0" minWidth="148.0" mnemonicParsing="false" onMouseClicked="#onClickRegisterButton" prefHeight="35.0" prefWidth="148.0" text="가입 하기">
+         <font>
+            <Font name="Malgun Gothic" size="13.0" />
+         </font>
+      </Button>
+      <BorderPane onMouseClicked="#moveMainPage" prefHeight="50.0" prefWidth="50.0" stylesheets="@style.css">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </BorderPane>
    </children>
 </AnchorPane>

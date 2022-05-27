@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -37,7 +38,7 @@ public class BookingPageController extends Controller implements Initializable {
     @FXML private Pane infoModalPane;
     @FXML private Text infoModalText;
     @FXML private Pane newFXMLPane;
-    @FXML private Pane newFXMLCloseButton;
+    @FXML private BorderPane newFXMLCloseButton;
     @FXML
     void onClickCloseNewFXML(MouseEvent event) {
         newFXMLPane.setVisible(false);
