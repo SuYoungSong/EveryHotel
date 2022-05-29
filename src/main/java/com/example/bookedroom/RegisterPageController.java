@@ -47,6 +47,7 @@ public class RegisterPageController extends Controller {
     @FXML
     void moveMainPage(MouseEvent event) throws IOException {
         movePage(event, "MainPageUI.fxml");
+        gotoMainButton.setVisible(false);
     }
     void modalActive(String msg){
         registerButton.setDisable(true);

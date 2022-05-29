@@ -180,7 +180,7 @@ public class BookingPageController extends Controller implements Initializable {
         }else {
             Label temp = new Label(msg);
             temp.setStyle("-fx-font-size: 20;");
-            temp.setLayoutX(70);
+            temp.setLayoutX(25);
             temp.setLayoutY(180);
             Pane pTemp = new Pane();
             pTemp.getChildren().add(temp);

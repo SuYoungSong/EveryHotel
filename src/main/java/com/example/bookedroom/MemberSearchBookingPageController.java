@@ -208,7 +208,7 @@ public class MemberSearchBookingPageController extends Controller implements Ini
         } else {
             Label temp = new Label("예약 정보가 없습니다.");
             temp.setStyle("-fx-font-size: 20;");
-            temp.setLayoutX(70);
+            temp.setLayoutX(85);
             temp.setLayoutY(180);
             Pane pTemp = new Pane();
             pTemp.getChildren().add(temp);

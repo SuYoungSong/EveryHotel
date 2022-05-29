@@ -82,7 +82,7 @@
             <Button layoutX="45.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#onClickCloseErrModal" prefHeight="33.0" prefWidth="160.0" text="닫 기" />
          </children>
       </Pane>
-      <Pane id="model" fx:id="changeRoomInfoPane" layoutX="26.0" layoutY="65.0" prefHeight="471.0" prefWidth="300.0" style="-fx-background-color: #1b1925;" visible="false">
+      <Pane id="model" fx:id="changeRoomInfoPane" layoutX="26.0" layoutY="65.0" prefHeight="473.0" prefWidth="300.0" style="-fx-background-color: #1b1925;" visible="false">
          <children>
             <Text fill="#eeeeee" layoutX="83.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 정보 변경">
                <font>
@@ -94,12 +94,12 @@
                   <Font name="Malgun Gothic" size="13.0" />
                </font>
             </Text>
-            <Text fill="#eeeeee" layoutX="67.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="정원">
+            <Text fill="#eeeeee" layoutX="67.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격">
                <font>
                   <Font name="Malgun Gothic" size="13.0" />
                </font>
             </Text>
-            <Text fill="#eeeeee" layoutX="67.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="가격">
+            <Text fill="#eeeeee" layoutX="67.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="정원">
                <font>
                   <Font name="Malgun Gothic" size="13.0" />
                </font>
@@ -109,10 +109,10 @@
                   <Font name="Malgun Gothic" size="13.0" />
                </font>
             </Text>
-            <TextField id="hotel_box2" fx:id="ciRoomNumber" editable="false" layoutX="61.0" layoutY="71.0" prefHeight="23.0" prefWidth="181.0" />
+            <TextField id="hotel_box2" fx:id="ciRoomNumber" layoutX="61.0" layoutY="71.0" prefHeight="23.0" prefWidth="181.0" />
             <TextField id="hotel_box2" fx:id="ciMaxPeople" layoutX="63.0" layoutY="235.0" prefHeight="23.0" prefWidth="181.0" />
             <TextField id="hotel_box2" fx:id="ciPrice" layoutX="62.0" layoutY="181.0" prefHeight="23.0" prefWidth="181.0" />
-            <Button id="modify_button" layoutX="41.0" layoutY="427.0" mnemonicParsing="false" onMouseClicked="#onClickChangeRoomInfo" prefHeight="30.0" prefWidth="160.0" text="변경">
+            <Button id="box_height" layoutX="41.0" layoutY="427.0" minWidth="87.0" mnemonicParsing="false" onMouseClicked="#onClickChangeRoomInfo" prefHeight="35.0" prefWidth="87.0" text="변경">
                <font>
                   <Font name="Malgun Gothic Bold" size="13.0" />
                </font></Button>
@@ -125,6 +125,11 @@
             <Button id="img_plus" layoutX="115.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#onClickCiImageAdd" prefHeight="23.0" prefWidth="89.0" text="추가" />
             <Button id="img_plus" layoutX="183.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#onClickCiImageDel" prefHeight="23.0" prefWidth="89.0" text="삭제" />
             <ListView fx:id="ciImageList" layoutX="66.0" layoutY="311.0" prefHeight="109.0" prefWidth="180.0" />
+            <Button id="box_height" layoutX="158.0" layoutY="427.0" minWidth="87.0" mnemonicParsing="false" onMouseClicked="#onClickDelRoom" prefHeight="35.0" prefWidth="87.0" text="숙소 삭제">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="13.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Text fill="#b0886a" layoutX="99.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="숙소 관리 페이지">

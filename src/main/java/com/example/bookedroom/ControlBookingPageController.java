@@ -188,6 +188,13 @@ public class ControlBookingPageController extends Controller implements Initiali
     @FXML
     void onClickCloseErrModal(MouseEvent event) { errorModal.setVisible(false); }
 
+    @FXML
+    void onClickDelRoom(MouseEvent event) throws IOException {
+        LoginData ld = new LoginData();
+        dbc.sendQuryPost("delete from everyhotel.숙소 where 숙소번호="+tprn+" and 업체아이디=\'"+ld.getId()+"\';");
+        movePage(event,"ControlBookingPageUI.fxml");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         LoginData ld = new LoginData();

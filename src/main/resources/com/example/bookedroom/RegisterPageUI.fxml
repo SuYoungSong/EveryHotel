@@ -161,5 +161,24 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </BorderPane>
+      <Pane id="model" fx:id="modalPane" layoutX="37.0" layoutY="209.0" prefHeight="160.0" prefWidth="287.0" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="112.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="안내">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+            <Text fx:id="modalText" fill="WHITE" layoutX="29.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="텍스트 입력" wrappingWidth="243.0625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button layoutX="89.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#closeModalButton" prefHeight="30.0" prefWidth="125.0" text="닫 기" />
+            <Button fx:id="gotoMainButton" layoutX="89.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#moveMainPage" prefHeight="30.0" prefWidth="125.0" text="닫 기" visible="false" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
    </children>
 </AnchorPane>

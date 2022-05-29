@@ -296,10 +296,10 @@ public class DetailsRoomPageController extends Controller{
         String SQL = "SELECT 업체명, 호실, 숙소정원, 분류, 가격, 숙소번호, 주소 FROM everyhotel.숙소 natural join everyhotel.숙박업체 where 숙소.업체아이디=숙박업체.업체아이디" +
                 " and 숙소.숙소번호 not in ( select 예약.숙소번호 " +
                 "from everyhotel.예약 " +
-                "where ( \'" + datePickerStartDate.getValue() +"\' between 예약.예약일 and 퇴실일 -1) or " +
+                "where ( \'" + datePickerStartDate.getValue() +"\' between 예약.예약일 and 퇴실일) or " +
                 "( \'"+ datePickerEndDate.getValue() +"\' between 예약.예약일 and 퇴실일 ) or " +
                 "( 예약.예약일 between \'" + datePickerStartDate.getValue() +"\' and \' " + datePickerEndDate.getValue() + "\') or " +
-                "( 예약.퇴실일-1 between \'" + datePickerStartDate.getValue() +"\' and \' " + datePickerEndDate.getValue() + "\')  )" +
+                "( 예약.퇴실일 between \'" + datePickerStartDate.getValue() +"\' and \' " + datePickerEndDate.getValue() + "\')  )" +
                 "and 숙소번호=" +roomNumber + ";";
         ResultSet result = dbc.sendQuryGet(SQL);
         try {
