@@ -14,15 +14,15 @@
 
 ## 2. 내용
 
-<img src="https://media.discordapp.net/attachments/349833160592457728/980380287894695936/unknown.png" width="220" height="300">
+<img src="https://i.postimg.cc/6qFL4bbQ/1.png" width="220" height="300">
 <br>
 　　　　　(▲메인화면)<br>
 
-<img src="https://media.discordapp.net/attachments/349833160592457728/980381183026298900/2.gif" width="220" height="300">
+<img src="https://i.postimg.cc/766gsrp6/2.gif" width="220" height="300">
 <br>
 　　　　　(▲숙소 등록)<br>
 
-<img src="https://cdn.discordapp.com/attachments/349833160592457728/980386128953765918/2887f542e8855cbf.gif" width="220" height="300">
+<img src="https://i.postimg.cc/3xTfLW9x/3.gif" width="220" height="300">
 <br>
 　　　　　(▲숙소 예약)<br>
 <br>
@@ -31,7 +31,7 @@
 
 ## 3. 문서
 ## ▶E-RD
-<img src="https://cdn.discordapp.com/attachments/349833160592457728/980382117055852614/er.drawio.png"><br>
+<img src="https://i.postimg.cc/xTr6Cqw3/4.png"><br>
 ## ▶릴레이션 
-<img src="https://cdn.discordapp.com/attachments/349833160592457728/980382116678352906/46b2fade74218de2.png">
+<img src="https://i.postimg.cc/wvCQ7bGj/5.png">
 
