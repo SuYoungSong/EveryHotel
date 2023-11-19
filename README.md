@@ -5,33 +5,29 @@
 - 소프트웨어학과 3학년 송수영(Java)
 - 소프트웨어학과 3학년 박태영(CSS, 디자인)
 
+## 설계
+![0](https://github.com/SuYoungSong/EveryHotel/assets/80526924/c9030251-1eb6-4dde-885e-71cc7bcb9037)
+![1](https://github.com/SuYoungSong/EveryHotel/assets/80526924/f41097f5-0862-46db-9926-f2898a18027d)
+![2](https://github.com/SuYoungSong/EveryHotel/assets/80526924/584d8ee9-6106-44fc-9d78-0bdd79510771)
+![3](https://github.com/SuYoungSong/EveryHotel/assets/80526924/706898da-d48e-463e-b8f3-e13721a820ff)
+![68747470733a2f2f692e706f7374696d672e63632f78547236437177332f342e706e67](https://github.com/SuYoungSong/EveryHotel/assets/80526924/28779227-f20f-41d4-9faf-7710ccb1a328)
+![68747470733a2f2f692e706f7374696d672e63632f777643513762476a2f352e706e67](https://github.com/SuYoungSong/EveryHotel/assets/80526924/c045cf03-47b3-4b08-8213-c93a35c6c8a9)
 
-## 1. 구동 환경
-### -intellij IDEA 2021.3.3
-### - mysql-connector-java-8.0.29
-### - javafx 18.0.1  (gradle)
-### - mysql 테이블 명 : everyhotel
 
-## 2. 내용
+## 실행 화면
 
-<img src="https://i.postimg.cc/6qFL4bbQ/1.png" width="220" height="300">
-<br>
+![68747470733a2f2f692e706f7374696d672e63632f3671464c346262512f312e706e67](https://github.com/SuYoungSong/EveryHotel/assets/80526924/79d56735-3b06-4a06-979b-fba28fed493c)
+
 　　　　　(▲메인화면)<br>
+![68747470733a2f2f692e706f7374696d672e63632f37363667737270362f322e676966](https://github.com/SuYoungSong/EveryHotel/assets/80526924/78e18bf7-b313-4864-a9f3-ee4b4dff03a8)
 
-<img src="https://i.postimg.cc/766gsrp6/2.gif" width="220" height="300">
-<br>
+
 　　　　　(▲숙소 등록)<br>
+![68747470733a2f2f692e706f7374696d672e63632f337854664c5739782f332e676966](https://github.com/SuYoungSong/EveryHotel/assets/80526924/8106af69-6163-46b1-8394-b82f8488a47c)
 
-<img src="https://i.postimg.cc/3xTfLW9x/3.gif" width="220" height="300">
-<br>
 　　　　　(▲숙소 예약)<br>
-<br>
+
 
  - 이 외 회원가입&탈퇴 및 리뷰 수정&작성 등 기능 존재
 
-## 3. 문서
-## ▶E-RD
-<img src="https://i.postimg.cc/xTr6Cqw3/4.png"><br>
-## ▶릴레이션 
-<img src="https://i.postimg.cc/wvCQ7bGj/5.png">
 
